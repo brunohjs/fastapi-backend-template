@@ -176,3 +176,67 @@ Contém scripts auxiliares para rodar e configurar a aplicação ou ambiente.
 - **README.md**: Documento com informações gerais sobre o projeto, como como rodá-lo, como contribuir, e sua estrutura.
 
 - **setup.cfg**: Arquivo de configuração para ferramentas de linting, como o Flake8. Define regras de estilo e configurações específicas para garantir a consistência de código.
+
+
+## Executando o projeto
+
+### Configuração do Ambiente
+O projeto usa variáveis de ambiente para configurações sensíveis. Siga os passos abaixo para configurá-las:
+
+1. Copie o arquivo `.env.example` para `.env`:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+2. Edite o arquivo `.env` para incluir suas configurações, como o URI do banco de dados, segredo para tokens JWT, entre outros parâmetros necessários.
+
+### Instalar Dependências
+Instale as dependências do projeto com o comando:
+
+```bash
+pip install -r requirements.dev.txt
+```
+
+#### Instalar sem as dependências de desenvolvimento (opcional)
+Se caso queira instalar sem as dependências de desenvolvimento, utilize o comando:
+```bash
+pip install -r requirements.txt
+```
+
+### Instalação e configuração do pre-commit
+O pre-commit serve para manter o padrão do projeto no momento do commit. Para instalá-lo e configurá-lo, use os comandos:
+
+```bash
+pip install pre-commit
+pre-commit install
+pre-commit install --hook-type commit-msg
+```
+
+### Executando o Projeto
+Agora, você pode iniciar a aplicação. Existem duas formas principais: utilizando o Uvicorn diretamente ou com Docker.
+
+#### Opção 1: Rodar no terminal
+Inicie a aplicação com o comando:
+
+```bash
+fastapi dev main.py
+```
+
+#### Opção 2: Rodar com Docker
+Se preferir rodar a aplicação em um contêiner Docker, utilize os seguintes comandos:
+
+Compilar e executar os contêineres:
+
+```bash
+docker-compose up --build
+```
+
+A aplicação estará disponível em http://127.0.0.1:8000.
+
+### Executando Testes
+Para rodar os testes, utilize o comando:
+
+```bash
+pytest
+```
