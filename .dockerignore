@@ -1,0 +1,8 @@
+tests/
+.coverage
+.env.example
+.gitignore
+coverage.xml
+README.md
+requirements.dev.txt
+setup.cfg
