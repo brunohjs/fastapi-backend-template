@@ -83,7 +83,7 @@ Contém os endpoints da API e as rotas que definem os pontos de acesso da aplica
 
 - **routes/**: Diretório onde estão as definições específicas de rotas de cada módulo ou funcionalidade da aplicação.
   - **user.py**: Define as rotas relacionadas a usuários, como criação, leitura, atualização e exclusão (CRUD).
-  
+
 - **router.py**: Arquivo principal que inclui e organiza todas as rotas definidas no diretório `routes`. Ele conecta os diferentes módulos de rota e configura a aplicação FastAPI.
 
 ### **config/**
@@ -92,16 +92,16 @@ Armazena a configuração da aplicação, como variáveis de ambiente e configur
 - **settings/**: Subpasta com configurações para diferentes ambientes.
   - **base.py**: Contém a configuração básica e comum a todos os ambientes.
   - **development.py**, **production.py**, **qa.py**: Configurações específicas para ambientes de desenvolvimento, produção e qualidade (QA).
-  
+
 - **logging.py**: Configuração do sistema de logs da aplicação. Define como e onde as mensagens de log serão registradas (por exemplo, no console ou em arquivos).
-  
+
 - **settings.py**: Carrega as configurações de acordo com o ambiente em que a aplicação está rodando (desenvolvimento, produção ou QA).
 
 ### **db/**
 Contém arquivos relacionados ao banco de dados, como a configuração de sessão e a base dos modelos ORM.
 
 - **base.py**: Define a classe `Base` usando `declarative_base` do SQLAlchemy, a qual será herdada por todos os modelos do banco de dados.
-  
+
 - **session.py**: Contém a configuração de sessão do SQLAlchemy (por exemplo, criando uma sessão de banco de dados, `SessionLocal`, para ser usada nas interações com o banco).
 
 ### **models/**
@@ -113,7 +113,7 @@ Contém os modelos que representam as tabelas do banco de dados. Cada modelo ger
 Armazena mensagens de sucesso e erro que são retornadas pela API. Centraliza a definição de mensagens.
 
 - **error.py**: Contém mensagens genéricas de erro que serão usadas nas respostas da API (por exemplo, "Falha na consulta", "Erro interno", etc.).
-  
+
 - **user.py**: Contém mensagens específicas relacionadas à criação, recuperação, atualização ou exclusão de usuários.
 
 ### **repositories/**
@@ -130,7 +130,7 @@ Contém os schemas de dados, usados para validação e serialização das inform
 Contém funcionalidades relacionadas à segurança da aplicação, como autenticação, autorização e criptografia.
 
 - **auth.py**: Contém funções de autenticação, como geração de tokens JWT, verificação de senha, etc.
-  
+
 - **security.py**: Contém configurações de segurança, como verificação de permissões, middleware de segurança, etc.
 
 ### **services/**
@@ -156,9 +156,9 @@ Contém os testes automatizados da aplicação, organizados por tipo (unitários
 Contém scripts auxiliares para rodar e configurar a aplicação ou ambiente.
 
 - **start.sh**: Script para iniciar a aplicação (provavelmente em um contêiner Docker ou diretamente no servidor).
-  
+
 - **pre_start.sh**: Scripts de preparação que podem configurar o ambiente ou banco de dados antes de iniciar a aplicação.
-  
+
 - **test.sh**: Script para rodar os testes automatizados.
 
 ### Arquivos na raiz do projeto
@@ -204,11 +204,10 @@ Se caso queira instalar sem as dependências de desenvolvimento, utilize o coman
 pip install -r requirements.txt
 ```
 
-### Instalação e configuração do pre-commit
-O pre-commit serve para manter o padrão do projeto no momento do commit. Para instalá-lo e configurá-lo, use os comandos:
+### Configuração do pre-commit
+O pre-commit serve para manter o padrão do projeto no momento do commit. Para configurá-lo, use os comandos:
 
 ```bash
-pip install pre-commit
 pre-commit install
 pre-commit install --hook-type commit-msg
 ```
