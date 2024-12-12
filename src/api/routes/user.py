@@ -1,7 +1,8 @@
 import fastapi
-from schemas.user import User
-from schemas.user import UserCreate
-from services import user_service
+
+from src.schemas.user import User
+from src.schemas.user import UserCreate
+from src.services import user_service
 
 
 router = fastapi.APIRouter()

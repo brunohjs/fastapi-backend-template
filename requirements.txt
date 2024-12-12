@@ -1,5 +1,0 @@
-fastapi[standard]
-passlib
-pydantic-settings
-python-decouple
-sqlalchemy

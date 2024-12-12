@@ -1,5 +1,6 @@
-from models.user import User
 from sqlalchemy.orm import Session
+
+from src.models.user import User
 
 
 async def create_user_repo(db: Session, user: User):

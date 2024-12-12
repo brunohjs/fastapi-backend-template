@@ -2,11 +2,11 @@ from functools import lru_cache
 
 import decouple
 
-from config.environment import Environment
-from config.settings.base import BaseSettings
-from config.settings.development import DevSettings
-from config.settings.qa import QASettings
-from config.settings.production import ProdSettings
+from src.config.environment import Environment
+from src.config.settings.base import BaseSettings
+from src.config.settings.development import DevSettings
+from src.config.settings.production import ProdSettings
+from src.config.settings.qa import QASettings
 
 
 @lru_cache()

@@ -1,7 +1,8 @@
 import fastapi
-import api.router as router
-from config import logging
-from config.manager import settings
+
+import src.api.router as router
+from src.config import logging
+from src.config.manager import settings
 
 
 # Configura o logging ao iniciar a aplicação

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+
+[project]
+name = "fastapi-backend-template"
+version = "0.0.1"
+dependencies = [
+    "fastapi[standard]>=0.115",
+    "passlib>=1.7",
+    "pydantic-settings>=2.6",
+    "python-decouple>=3.8",
+    "sqlalchemy>=2.0"
+]
+requires-python = ">=3.12"
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "pre-commit",
+    "pytest",
+    "pytest-cov"
+]
+deploy = [
+    "build",
+    "twine"
+]

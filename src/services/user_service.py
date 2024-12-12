@@ -1,7 +1,7 @@
-from schemas.user import UserCreate
-from models.user import User
-from security import security
-from repositories import user
+from src.models.user import User
+from src.repositories import user
+from src.schemas.user import UserCreate
+from src.security import security
 
 
 async def create_user(user_in: UserCreate):

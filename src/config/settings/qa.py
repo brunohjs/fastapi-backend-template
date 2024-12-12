@@ -1,5 +1,5 @@
-from config.settings.base import BaseSettings
-from config.environment import Environment
+from src.config.environment import Environment
+from src.config.settings.base import BaseSettings
 
 
 class QASettings(BaseSettings):
