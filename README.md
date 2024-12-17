@@ -195,13 +195,13 @@ O projeto usa variáveis de ambiente para configurações sensíveis. Siga os pa
 Instale as dependências do projeto com o comando:
 
 ```bash
-pip install -r requirements.dev.txt
+pip install .
 ```
 
-#### Instalar sem as dependências de desenvolvimento (opcional)
-Se caso queira instalar sem as dependências de desenvolvimento, utilize o comando:
+#### Instalar com as dependências de desenvolvimento (opcional)
+Se caso queira instalar com as dependências de desenvolvimento, utilize o comando:
 ```bash
-pip install -r requirements.txt
+pip install .[dev]
 ```
 
 ### Configuração do pre-commit
