@@ -1,0 +1,28 @@
+name: Run tests
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
+jobs:
+  pytest:
+    runs-on: pagseguro
+    container:
+      image: repo.intranet.pags/base-images/python-3.12:latest
+      ports:
+        - 80
+      volumes:
+        - python_volume:/python_volume
+      options: --cpus 1
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install .[dev]
+      - name: Run tests
+        run: |
+          pytest tests/unit
