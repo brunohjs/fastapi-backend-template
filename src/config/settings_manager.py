@@ -1,6 +1,7 @@
+import os
 from functools import lru_cache
 
-import decouple
+from dotenv import load_dotenv
 
 from src.config.environment import Environment
 from src.config.settings.base import BaseSettings
@@ -11,12 +12,16 @@ from src.config.settings.qa import QASettings
 
 @lru_cache()
 def get_settings() -> BaseSettings:
-    environment = decouple.config("ENVIRONMENT", "DEV")
-    if environment == Environment.DEVELOPMENT.value:
+    load_dotenv(".env")
+    environment = os.environ.get("ENV")
+    if environment == Environment.DEVELOPMENT:
         return DevSettings()
-    elif environment == Environment.QA.value:
+    elif environment == Environment.QA:
         return QASettings()
-    return ProdSettings()
+    elif environment == Environment.PRODUCTION:
+        return ProdSettings()
+    else:
+        raise ValueError()
 
 
 settings: BaseSettings = get_settings()
