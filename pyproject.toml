@@ -20,10 +20,16 @@ readme = "README.md"
 
 [project.optional-dependencies]
 dev = [
+    "aioresponses",
+    "faker",
     "flake8",
+    "flake8-print",
     "pre-commit",
     "pytest",
+    "pytest-asyncio",
     "pytest-cov",
+    "pytest-env",
+    "pytest-freezegun",
     "setuptools"
 ]
 deploy = [
